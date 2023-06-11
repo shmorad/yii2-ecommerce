@@ -1,0 +1,415 @@
+2023-06-04 19:56:24 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#5 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(1163): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\mysql\Schema.php(328): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\mysql\Schema.php(133): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#18 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#19 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\xampp\htdocs\YII-2\yii-2_E-commerce\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it in C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#3 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(1163): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\mysql\Schema.php(328): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\mysql\Schema.php(133): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#16 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\xampp\htdocs\YII-2\yii-2_E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\xampp\htdocs\YII-2\yii-2_E-commerce\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No connection could be made because the target machine actively refused it
+)
+
+2023-06-04 19:56:19 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1685901379.7704
+    'REQUEST_TIME' => 1685901379
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2023-06-08 18:12:51 [-][-][-][error][yii\console\Exception] yii\console\Exception: Unknown option: --fields. Options available: --color, --interactive, --help, --silentExitOnException, --migrationPath, --migrationNamespaces, --compact, --migrationTable, --db in C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Controller.php:171
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('crate', Array)
+#1 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/crate', Array)
+#2 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/crate', Array)
+#3 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#4 C:\xampp\htdocs\YII-2\E-commerce\yii(23): yii\base\Application->run()
+#5 {main}
+2023-06-08 18:12:50 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1686240770.954
+    'REQUEST_TIME' => 1686240770
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+        1 => 'migrate/crate'
+        2 => 'create_products_table'
+        3 => '--fields=name:string(255):notNull,description:text(255),imahe:string(2000),price:decimale(10, 2):notNull,status:int(2):notNull,created_at:integer(11),updated_at:int(11),created_by:integer(11):foreignkey(user),updated_by:integer(11):foreignkey:(user)'
+    ]
+    'argc' => 4
+]
+2023-06-08 18:13:24 [-][-][-][error][yii\console\Exception] yii\console\Exception: Unknown option: --fields. Options available: --color, --interactive, --help, --silentExitOnException, --migrationPath, --migrationNamespaces, --compact, --migrationTable, --db in C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Controller.php:171
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('crate', Array)
+#1 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/crate', Array)
+#2 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/crate', Array)
+#3 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#4 C:\xampp\htdocs\YII-2\E-commerce\yii(23): yii\base\Application->run()
+#5 {main}
+2023-06-08 18:13:24 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1686240804.6203
+    'REQUEST_TIME' => 1686240804
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate/crate'
+        2 => 'create_products_table'
+        3 => '--fields=name:string(255):notNull,description:text(255),imahe:string(2000),price:decimale(10, 2):notNull,status:int(2):notNull,created_at:integer(11),updated_at:int(11),created_by:integer(11):foreignkey(user),updated_by:integer(11):foreignkey:(user)'
+    ]
+    'argc' => 4
+]
+2023-06-08 19:17:36 [-][-][-][error][yii\console\Exception] yii\console\Exception: Unknown option: --fileds. Options available: --color, --interactive, --help, --silentExitOnException, --migrationPath, --migrationNamespaces, --compact, --templateFile, --migrationTable, --db, --templateFile, --fields, --useTablePrefix, --comment in C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Controller.php:171
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('create', Array)
+#1 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#2 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#3 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#4 C:\xampp\htdocs\YII-2\E-commerce\yii(23): yii\base\Application->run()
+#5 {main}
+2023-06-08 19:17:36 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1686244656.186
+    'REQUEST_TIME' => 1686244656
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+        1 => 'migrate/create'
+        2 => 'create_user_addresses_table'
+        3 => '--fileds=user_id:integer(11):notNull:foreignkey(user),address:string(255):notNull,city:string(255):notNull,state:string(255):notNull,country:string(255):notNull,zipcode:string(255))'
+    ]
+    'argc' => 4
+]
+2023-06-08 19:18:01 [-][-][-][error][yii\console\Exception] yii\console\Exception: Unknown option: --fileds. Options available: --color, --interactive, --help, --silentExitOnException, --migrationPath, --migrationNamespaces, --compact, --templateFile, --migrationTable, --db, --templateFile, --fields, --useTablePrefix, --comment in C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Controller.php:171
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('create', Array)
+#1 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/create', Array)
+#2 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/create', Array)
+#3 C:\xampp\htdocs\YII-2\E-commerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#4 C:\xampp\htdocs\YII-2\E-commerce\yii(23): yii\base\Application->run()
+#5 {main}
+2023-06-08 19:18:01 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1686244681.4669
+    'REQUEST_TIME' => 1686244681
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\E-commerce\\yii'
+        1 => 'migrate/create'
+        2 => 'create_user_addresses_table'
+        3 => '--fileds=user_id:integer(11):notNull:foreignkey(user),address:string(255):notNull,city:string(255):notNull,state:string(255):notNull,country:string(255):notNull,zipcode:string(255))'
+    ]
+    'argc' => 4
+]
