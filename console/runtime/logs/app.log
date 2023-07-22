@@ -413,3 +413,354 @@ $_SERVER = [
     ]
     'argc' => 4
 ]
+2023-06-16 18:00:13 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists in C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Command.php:1302
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Command.php(1302): PDOStatement->execute()
+#1 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Command.php(1102): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Migration.php(322): yii\db\Command->execute()
+#3 C:\xampp\htdocs\YII-2\yii2-ecommerce\console\migrations\m130524_201442_init.php(15): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(758): m130524_201442_init->up()
+#5 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(216): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\YII-2\yii2-ecommerce\yii(23): yii\base\Application->run()
+#15 {main}
+
+Next yii\db\Exception: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'user' already exists
+The SQL being executed was: CREATE TABLE `user` (
+	`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`username` varchar(255) NOT NULL UNIQUE,
+	`auth_key` varchar(32) NOT NULL,
+	`password_hash` varchar(255) NOT NULL,
+	`password_reset_token` varchar(255) UNIQUE,
+	`email` varchar(255) NOT NULL UNIQUE,
+	`status` smallint(6) NOT NULL DEFAULT 10,
+	`created_at` int(11) NOT NULL,
+	`updated_at` int(11) NOT NULL
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB in C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Schema.php:676
+Stack trace:
+#0 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'CREATE TABLE `u...')
+#1 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Command.php(1102): yii\db\Command->internalExecute('CREATE TABLE `u...')
+#2 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\db\Migration.php(322): yii\db\Command->execute()
+#3 C:\xampp\htdocs\YII-2\yii2-ecommerce\console\migrations\m130524_201442_init.php(15): yii\db\Migration->createTable('{{%user}}', Array, 'CHARACTER SET u...')
+#4 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(758): m130524_201442_init->up()
+#5 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(216): yii\console\controllers\BaseMigrateController->migrateUp('m130524_201442_...')
+#6 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#7 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('', Array)
+#11 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#12 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#13 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#14 C:\xampp\htdocs\YII-2\yii2-ecommerce\yii(23): yii\base\Application->run()
+#15 {main}
+Additional Information:
+Array
+(
+    [0] => 42S01
+    [1] => 1050
+    [2] => Table 'user' already exists
+)
+
+2023-06-16 18:00:09 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1686931209.2261
+    'REQUEST_TIME' => 1686931209
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2023-07-08 13:57:05 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php:256
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionDown(0)
+#1 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('down', Array)
+#4 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('down', Array)
+#5 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/down', Array)
+#6 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/down', Array)
+#7 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\YII-2\yii2-ecommerce\yii(23): yii\base\Application->run()
+#9 {main}
+2023-07-08 13:57:05 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1688817425.3844
+    'REQUEST_TIME' => 1688817425
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+        1 => 'migrate/down'
+        2 => 'm230609_052855_create_user_addresses_table'
+    ]
+    'argc' => 3
+]
+2023-07-08 13:57:29 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php:256
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionDown(0)
+#1 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('down', Array)
+#4 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('down', Array)
+#5 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/down', Array)
+#6 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/down', Array)
+#7 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\YII-2\yii2-ecommerce\yii(23): yii\base\Application->run()
+#9 {main}
+2023-07-08 13:57:29 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1688817449.7623
+    'REQUEST_TIME' => 1688817449
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+        1 => 'migrate/down'
+        2 => 'm230609_052855_create_user_addresses_table'
+    ]
+    'argc' => 3
+]
+2023-07-08 13:57:35 [-][-][-][error][yii\console\Exception] yii\console\Exception: The step argument must be greater than 0. in C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php:256
+Stack trace:
+#0 [internal function]: yii\console\controllers\BaseMigrateController->actionDown(0)
+#1 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('down', Array)
+#4 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Module.php(552): yii\console\Controller->runAction('down', Array)
+#5 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/down', Array)
+#6 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/down', Array)
+#7 C:\xampp\htdocs\YII-2\yii2-ecommerce\vendor\yiisoft\yii2\base\Application.php(384): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\xampp\htdocs\YII-2\yii2-ecommerce\yii(23): yii\base\Application->run()
+#9 {main}
+2023-07-08 13:57:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\user\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-2S09SH8'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\user'
+    'LOCALAPPDATA' => 'C:\\Users\\user\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-2S09SH8'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OneDrive' => 'C:\\Users\\user\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\user\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\MinGW\\bin;C:\\MinGW\\Fort99\\G77\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\user\\AppData\\Roaming\\npm;C:\\Users\\user\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\user\\AppData\\Local\\GitHubDesktop\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '5e03'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\user\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-2S09SH8'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-2S09SH8'
+    'USERNAME' => 'user'
+    'USERPROFILE' => 'C:\\Users\\user'
+    'windir' => 'C:\\Windows'
+    'YII_PATH' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PHP_SELF' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_NAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'SCRIPT_FILENAME' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1688817454.9636
+    'REQUEST_TIME' => 1688817454
+    'argv' => [
+        0 => 'C:\\xampp\\htdocs\\YII-2\\yii2-ecommerce\\yii'
+        1 => 'migrate/down'
+        2 => 'm230609_052855_create_user_addresses_table.php'
+    ]
+    'argc' => 3
+]

@@ -19,8 +19,8 @@ $this->title = 'Login';
                 <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
             </div>
             <?php $form = ActiveForm::begin(['id' => 'login-form','options'=>['class'=>'user']]); ?>
-                <?= $form->field($model, 'username',['inputOptions'=>['class'=>'form-control form-control-user','placeholder'=>'Enter Your UserName']])->textInput(['autofocus' => true]) ?>
-                <?= $form->field($model, 'password',['inputOptions'=>['class'=>'form-control form-control-user','placeholder'=>'Enter Your Password']])->passwordInput() ?>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'password')->passwordInput() ?>
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-user btn-block', 'name' => 'login-button']) ?>
                     <hr>

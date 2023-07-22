@@ -12,6 +12,8 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
+ * @property string $firstname
+ * @property string $lastname
  * @property string $username
  * @property string $password_hash
  * @property string $password_reset_token
@@ -22,13 +24,15 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property \common\models\UserAddress[] $address
  */
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
-    const STATUS_INACTIVE = 9;
-    const STATUS_ACTIVE = 10;
-
+    const STATUS_INACTIVE = 2;
+    const STATUS_ACTIVE = 1;
+    public $password;
+    public $confirmPassword;
 
     /**
      * {@inheritdoc}
@@ -53,8 +57,9 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function rules()
     {
+       
         return [
-            ['status', 'default', 'value' => self::STATUS_INACTIVE],
+            ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
         ];
     }
@@ -82,9 +87,9 @@ class User extends ActiveRecord implements IdentityInterface
      * @return static|null
      */
     public static function findByUsername($username)
-    {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
-    }
+{
+    return static::findOne(['username'=>$username,'status'=>self::STATUS_ACTIVE]);
+}
 
     /**
      * Finds user by password reset token
@@ -113,7 +118,7 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByVerificationToken($token) {
         return static::findOne([
             'verification_token' => $token,
-            'status' => self::STATUS_INACTIVE
+            'status' => self::STATUS_ACTIVE
         ]);
     }
 
@@ -168,6 +173,10 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return Yii::$app->security->validatePassword($password, $this->password_hash);
     }
+//     public function validatePassword($password)
+// {
+//     return $this->password === Yii::$app->security->generatePasswordHash ($password);
+// }
 
     /**
      * Generates password hash from password and sets it to the model
@@ -211,6 +220,18 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
     public function getDisplayName(){
-       return $this->username;
+        $fullname =trim($this->firstname.' '.$this->lastname);
+       return $fullname;
+       die();
+    }
+    public function getAddresses(){
+        return $this->hasMany(userAddress::class,['user_id'=>'id']);
+    }
+    public function getAddress()
+    {
+        $address = $this->userAddesses[0] ?? new userAddress();
+        $address->user_id = $this->id;
+        return $address;
+
     }
 }

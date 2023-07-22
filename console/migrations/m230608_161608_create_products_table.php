@@ -52,7 +52,7 @@ class m230608_161608_create_products_table extends Migration
         // add foreign key for table `user`
         $this->addForeignKey(
             '{{%fk-products-updated_by }}',
-            '{{%product}}',
+            '{{%products}}',
             'updated_by',
             '{{%user}}',
             'id',

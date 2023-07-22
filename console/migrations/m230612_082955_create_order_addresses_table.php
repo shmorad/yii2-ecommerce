@@ -29,7 +29,7 @@ class m230612_082955_create_order_addresses_table extends Migration
         );
         $this->addForeignKey(
             '{{%fk-order_addresses-order_id}}',
-            '{{%order_addresses}',
+            '{{%order_addresses}}',
             'order_id',
             '{{%orders}}',
             'id',
